@@ -1,0 +1,35 @@
+﻿@model MvcStudent.Models.CategoryModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CategoryModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CATEGORY_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CATEGORY_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CATEGORY_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CATEGORY_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CATEGORY_Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CATEGORY_Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "FetchCategory")
+</p>

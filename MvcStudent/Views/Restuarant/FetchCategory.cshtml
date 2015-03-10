@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MvcStudent.Models.CategoryModel>
+
+@{
+    ViewBag.Title = "FetchCategory";
+}
+
+<h2>FetchCategory</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORY_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORY_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORY_Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY_Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.CATEGORY_ID }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.CATEGORY_ID  }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

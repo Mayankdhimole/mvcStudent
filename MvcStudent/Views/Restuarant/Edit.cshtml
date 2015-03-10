@@ -1,0 +1,48 @@
+﻿@model MvcStudent.Models.CategoryModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CategoryModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CATEGORY_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CATEGORY_ID)
+            @Html.ValidationMessageFor(model => model.CATEGORY_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CATEGORY_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CATEGORY_Name)
+            @Html.ValidationMessageFor(model => model.CATEGORY_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CATEGORY_Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CATEGORY_Description)
+            @Html.ValidationMessageFor(model => model.CATEGORY_Description)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "FetchCategory")
+</div>
